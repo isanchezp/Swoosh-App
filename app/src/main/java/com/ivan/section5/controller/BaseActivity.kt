@@ -1,4 +1,4 @@
-package com.ivan.section5
+package com.ivan.section5.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

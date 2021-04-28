@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/desiredleaguebg"
-    tools:context=".LeagueActivity">
+    tools:context=".controller.LeagueActivity">
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -45,25 +45,31 @@
         app:layout_constraintTop_toBottomOf="@id/tv_header">
 
         <ToggleButton
+            android:id="@+id/btn_mens"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swoosh_toggle"
             android:text="Mens"
+            android:onClick="onMensCliked"
             android:textColor="@android:color/white"
             android:textOff="Mens"
             android:textOn="Mens" />
 
         <ToggleButton
+            android:id="@+id/btn_womens"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/swoosh_toggle"
             android:text="Womens"
+            android:onClick="onWomensClicked"
             android:textColor="@android:color/white"
             android:textOff="Womens"
             android:textOn="Womens" />
 
         <ToggleButton
+            android:id="@+id/btn_co_ed"
+            android:onClick="wonCoEdClicked"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
