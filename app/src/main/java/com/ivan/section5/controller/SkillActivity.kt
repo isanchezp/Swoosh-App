@@ -41,4 +41,14 @@ class SkillActivity : BaseActivity() {
             Toast.makeText(this, "Please select a skill level", Toast.LENGTH_LONG).show()
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putSerializable(Constants.EXTRA_PLAYER, player)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        player = savedInstanceState.getSerializable(Constants.EXTRA_PLAYER) as Player
+    }
 }
