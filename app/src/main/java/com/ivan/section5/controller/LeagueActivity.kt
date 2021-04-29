@@ -6,11 +6,12 @@ import android.view.View
 import android.widget.Toast
 import com.ivan.section5.utilities.Constants
 import com.ivan.section5.R
+import com.ivan.section5.model.Player
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    private val player = Player()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,25 +21,25 @@ class LeagueActivity : BaseActivity() {
     fun onMensCliked(view: View) {
         btn_womens.isChecked = false
         btn_co_ed.isChecked = false
-        selectedLeague = "mens"
+        player.league = "mens"
     }
 
     fun onWomensClicked(view: View) {
         btn_mens.isChecked = false
         btn_co_ed.isChecked = false
-        selectedLeague = "womens"
+        player.league = "womens"
     }
 
     fun wonCoEdClicked(view: View) {
         btn_mens.isChecked = false
         btn_womens.isChecked = false
-        selectedLeague = "co-ed"
+        player.league = "co-ed"
     }
 
     fun onNextClicked(view: View){
-        if (selectedLeague.isNotEmpty()) {
+        if (player.league.isNotEmpty()) {
             val intent = Intent(this, SkillActivity::class.java)
-            intent.putExtra(Constants.EXTRA_LEAGUE, selectedLeague)
+            intent.putExtra(Constants.EXTRA_PLAYER, player)
             startActivity(intent)
         } else{
             Toast.makeText(this, "Please select a league", Toast.LENGTH_LONG).show()
